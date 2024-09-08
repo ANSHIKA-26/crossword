@@ -1,5 +1,5 @@
 var words = [
-    {number:1, direction:'down', row:1, column:10, clue:'The head of state of India', answer:'president', hint:''},
+    {number:1, direction:'down', row:1, column:10, clue:'The head of state of India', answer:'president', hint:"answer starts with letter p"},
     {number:2, direction:'down', row:2, column:16, clue:'The highest court in India', answer:'supremecourt', hint:''},
     {number:3, direction:'down', row:3, column:18, clue:'Article 21 protects this right', answer:'righttolife', hint:''},
     {number:4, direction:'across', row:5, column:1, clue:'Part of the Parliament of India', answer:'rajyasabha', hint:''},
@@ -127,12 +127,7 @@ $crosswordClues.appendTo('.crossword');
 // Add the hints, reset, and show answers buttons
 var $puzzleButtons = $('<div class="crossword-buttons"></div>');
 var $hintsButton = $('<button class="btn btn-default">Show Hints</button>');
-    $hintsButton.on('click',function(e){
-        e.preventDefault();
-        $('.crossword-clues').toggleClass('show-hints');
-        $(this).text( $(this).text() == 'Show Hints' ? 'Hide Hints' : 'Show Hints' );
-    });
-    $hintsButton.appendTo($puzzleButtons);
+    
 var $resetButton = $('<button class="btn btn-default">Clear Puzzle</button>');
     $resetButton.on('click',function(e){
         e.preventDefault();
@@ -150,9 +145,8 @@ var $solveButton = $('<button class="show-answers btn btn-default">Show Answers<
         markCorrect = false;
     });
     $solveButton.appendTo($puzzleButtons);
-$puzzleButtons.appendTo('.crossword');
-
-// Add the success modal
+    $puzzleButtons.insertAfter('h1.page-header');
+    // Add the success modal
 var $modal = $('<div class="modal fade" id="success-modal" tabindex="-1" role="dialog"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title">Congratulations!</h4></div><div class="modal-body"><p>You have finished the puzzle.</p></div></div></div></div>');
 $modal.appendTo('body');
 
