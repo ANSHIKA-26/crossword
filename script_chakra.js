@@ -145,9 +145,13 @@ const messageBox = document.getElementById('message-box');
 
 centerButton.addEventListener('mouseover', function (event) {
     messageBox.style.display = 'block';
-    messageBox.innerHTML = `<strong>Fundamental Rights and Duties</strong><br><span>Your subtext here</span>`;
+    messageBox.innerHTML = `<strong>Fundamental Rights and Duties</strong><br><a href="https://nishi-0212.github.io/Institutions-and-Constitution/">Click here for more information</a>`;
     messageBox.style.left = `${event.clientX + 10}px`;
     messageBox.style.top = `${event.clientY + 10}px`;
+});
+
+centerButton.addEventListener('click', function () {
+    window.location.href = 'https://nishi-0212.github.io/Institutions-and-Constitution/';
 });
 
 centerButton.addEventListener('mousemove', function (event) {
